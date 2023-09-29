@@ -9,6 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Mona Bandov" />
 
 <meta name="date" content="2023-09-29" />
 
@@ -4393,6 +4394,7 @@ display: none;
 
 
 <h1 class="title toc-ignore">Lab 05 - Data Wrangling</h1>
+<h4 class="author">Mona Bandov</h4>
 <h4 class="date">2023-09-29</h4>
 
 </div>
@@ -4527,7 +4529,8 @@ library(tidyverse)</code></pre>
 ## ✖ lubridate::yday()     masks data.table::yday()
 ## ✖ lubridate::year()     masks data.table::year()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-<pre class="r"><code>library(leaflet)</code></pre>
+<pre class="r"><code>library(leaflet)
+library(webshot)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Load the met data from <a href="https://raw.githubusercontent.com/USCbiostats/data-science-data/master/02_met/met_all.gz" class="uri">https://raw.githubusercontent.com/USCbiostats/data-science-data/master/02_met/met_all.gz</a>,
 and also the station data. For the later, you can use the code we used
@@ -4794,8 +4797,8 @@ leaflet(data = all_stations) %&gt;%
     fillColor = ,
     fillOpacity = 0.7,
     radius = 3) </code></pre>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d08b297b9165f70e390c" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-d08b297b9165f70e390c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[33.177,35.259,34.257,36.767,39.05,41.51,39.133,28.474,32.64,41.691,44.89,40.477,40.711,38.066,37.578,30.718,41.876,38.981,44.533,43.322,45.147,38.096,32.321,45.808,35.582,48.39,40.967,43.567,40.033,35,38.06,42.209,40.28,35.417,42.6,40.849,41.597,33.921,44.381,36.009,31.106,40.219,37.358,44.204,47.104,44.36,39,43.067,34.3],[-86.783,-93.093,-111.339,-119.717,-105.516,-72.828,-75.467,-82.45400000000001,-83.592,-93.566,-116.101,-88.916,-86.375,-97.861,-84.77,-91.479,-71.021,-76.922,-69.667,-84.688,-94.50700000000001,-92.553,-90.078,-108.543,-79.101,-100.024,-98.31700000000001,-71.43300000000001,-74.35300000000001,-105.67,-117.087,-75.98,-83.11499999999999,-97.383,-123.364,-77.849,-71.41200000000001,-80.801,-100.285,-86.52,-98.196,-111.723,-78.438,-72.562,-122.287,-89.839,-80.274,-108.45,-116.166],3,null,"Stations",{"interactive":true,"className":"","stroke":true,"color":["AL","AR","AZ","CA","CO","CT","DE","FL","GA","IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VA","VT","WA","WI","WV","WY","CA"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["AL","AR","AZ","CA","CO","CT","DE","FL","GA","IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VA","VT","WA","WI","WV","WY","CA"],"fillOpacity":0.7},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[28.474,48.39],"lng":[-123.364,-69.667]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4da0bccc1681b79d815f" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-4da0bccc1681b79d815f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[33.177,35.259,34.257,36.767,39.05,41.51,39.133,28.474,32.64,41.691,44.89,40.477,40.711,38.066,37.578,30.718,41.876,38.981,44.533,43.322,45.147,38.096,32.321,45.808,35.582,48.39,40.967,43.567,40.033,35,38.06,42.209,40.28,35.417,42.6,40.849,41.597,33.921,44.381,36.009,31.106,40.219,37.358,44.204,47.104,44.36,39,43.067,34.3],[-86.783,-93.093,-111.339,-119.717,-105.516,-72.828,-75.467,-82.45400000000001,-83.592,-93.566,-116.101,-88.916,-86.375,-97.861,-84.77,-91.479,-71.021,-76.922,-69.667,-84.688,-94.50700000000001,-92.553,-90.078,-108.543,-79.101,-100.024,-98.31700000000001,-71.43300000000001,-74.35300000000001,-105.67,-117.087,-75.98,-83.11499999999999,-97.383,-123.364,-77.849,-71.41200000000001,-80.801,-100.285,-86.52,-98.196,-111.723,-78.438,-72.562,-122.287,-89.839,-80.274,-108.45,-116.166],3,null,"Stations",{"interactive":true,"className":"","stroke":true,"color":["AL","AR","AZ","CA","CO","CT","DE","FL","GA","IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VA","VT","WA","WI","WV","WY","CA"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["AL","AR","AZ","CA","CO","CT","DE","FL","GA","IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VA","VT","WA","WI","WV","WY","CA"],"fillOpacity":0.7},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[28.474,48.39],"lng":[-123.364,-69.667]}},"evals":[],"jsHooks":[]}</script>
 <p>Knit the doc and save it on GitHub.</p>
 </div>
 <div id="question-4-means-of-means" class="section level2">
